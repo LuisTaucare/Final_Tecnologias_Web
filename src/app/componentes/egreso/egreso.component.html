@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Formulario</h1>
+        </div>
+        <form [formGroup]="formulario">
+        <div class="form-group">
+            <label >Descripcion</label>
+
+            <input  type="text"
+                    placeholder="Ingresa descripcion"
+                    formControlName ="descripcion"
+                    required 
+                    >
+            <small *ngIf ="formularioReactivo.descripcion?.errors?.required && formularioReactivo.descripcion.touched">
+                El descripcion es requerida
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label >Precio</label>
+
+            <input  type="text"
+                    placeholder="Ingresa el precio"
+                    formControlName ="precio"
+                    required 
+                    >
+            <small *ngIf ="formularioReactivo.precio?.errors?.required && formularioReactivo.precio.touched">
+                El precio es requerido
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label >Id_Usuario</label>
+
+            <input  type="text"
+                    placeholder="Ingresa tu id_usuario"
+                    formControlName ="id_usuario"
+                    required 
+                    >
+            <small *ngIf ="formularioReactivo.id_usuario?.errors?.required && formularioReactivo.id_usuario.touched">
+                El id usuario es requerido
+            </small>
+        </div>
+
+        
+
+        <div class="form-group">
+            <div>
+                <button
+                        class="btn btn-primary"
+                        type="submit"
+                        (click)="botonenviar()"
+                        [disabled]="!formulario.valid">
+                        Enviar                    
+                    </button>
+
+
+
+            </div>
+        </div>
+
+
+
+        </form>
+
+
+    </div>
+    
+    
+</body>
+</html>

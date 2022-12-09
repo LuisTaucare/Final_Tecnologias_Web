@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Formulario</h1>
+        </div>
+        <form [formGroup]="formulario">
+        <div class="form-group">
+            <label >Nombre</label>
+
+            <input  type="text"
+                    placeholder="Ingresa tu nombre"
+                    formControlName ="nombre"
+                    required 
+                    >
+            <small *ngIf ="formularioReactivo.nombre?.errors?.required && formularioReactivo.nombre.touched">
+                El nombre es requerido
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label >Apellido</label>
+
+            <input  type="text"
+                    placeholder="Ingresa tu apellido"
+                    formControlName ="apellido"
+                    required 
+                    >
+            <small *ngIf ="formularioReactivo.apellido?.errors?.required && formularioReactivo.apellido.touched">
+                El apellido es requerido
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label >Rut</label>
+
+            <input  type="text"
+                    placeholder="Ingresa tu apellido"
+                    formControlName ="rut"
+                    required 
+                    >
+            <small *ngIf ="formularioReactivo.rut?.errors?.required && formularioReactivo.rut.touched">
+                El rut es requerido
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label >Correo</label>
+
+            <input  type="text"
+                    placeholder="Ingresa tu correo"
+                    formControlName ="correo"
+                    required 
+                    >
+            <small *ngIf ="formularioReactivo.correo?.errors?.required && formularioReactivo.correo.touched">
+                El Correo es requerido
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label >Password</label>
+
+            <input  type="text"
+                    placeholder="Ingresa tu Password"
+                    formControlName ="password"
+                    required 
+                    >
+            <small *ngIf ="formularioReactivo.password?.errors?.required && formularioReactivo.password.touched">
+                El password es requerido
+            </small>
+        </div>
+
+        <div class="form-group">
+            <div>
+                <button
+                        class="btn btn-primary"
+                        type="submit"
+                        (click)="botonEnviar()"
+                        [disabled]="!formulario.valid">
+                        Enviar                    
+                    </button>
+
+
+
+            </div>
+        </div>
+
+
+
+        </form>
+
+
+    </div>
+    
+    
+</body>
+</html>
