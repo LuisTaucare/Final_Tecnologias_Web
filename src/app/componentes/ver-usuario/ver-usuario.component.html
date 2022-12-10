@@ -1,1 +1,33 @@
-<p>ver-usuario works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">nombre </th>
+            <th scope="col">apellido</th>
+            <th scope="col">rut</th>
+            <th scope="col">correo</th>
+            <th scope="col">password</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let dato of usuario">
+            <th scope="row">{{dato.nombre}}</th>
+            <td>{{dato.apellido}}</td>
+            <td>{{dato.rut}}</td>
+            <td>{{dato.correo}}</td>
+            <td>{{dato.password}}</td>
+            
+          </tr>
+        </table>
+    
+</body>
+</html>
